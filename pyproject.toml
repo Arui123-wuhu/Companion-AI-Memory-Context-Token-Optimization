@@ -1,0 +1,31 @@
+# -*- mode: toml -*-
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "caim"
+version = "0.1.0"
+description = "Companion AI Memory — 借鉴人脑记忆与存储优化策略的 AI 上下文压缩与抗遗忘引擎"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Companion AI Memory Contributors" }]
+keywords = ["llm", "memory", "context", "token", "agent", "companion", "rag"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+tiktoken = ["tiktoken>=0.7"]
+
+[project.scripts]
+caim = "caim.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+caim = ["py.typed"]
