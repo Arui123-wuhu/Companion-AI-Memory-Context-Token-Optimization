@@ -256,7 +256,7 @@ for hit in engine.retrieve("花生"):
 
 ## 九、发布到 GitHub
 
-仓库已按开源项目整理好（`LICENSE` / `.gitignore` / `pyproject.toml` / CI workflow），
+仓库已按开源项目整理好（`LICENSE` / `.gitignore` / `pyproject.toml` / CI 模板），
 本机装好 git 后：
 
 ```bash
@@ -278,6 +278,12 @@ git push -u origin main
 pip install -e .
 python -m unittest discover -s tests -v   # 54 tests
 python benchmarks/run_benchmark.py --sweep
+```
+
+CI 模板在 [`docs/ci.yml.example`](docs/ci.yml.example)，复制到 `.github/workflows/ci.yml` 即可启用：
+
+```bash
+mkdir -p .github/workflows && cp docs/ci.yml.example .github/workflows/ci.yml
 ```
 
 MIT License.
